@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+html::-webkit-scrollbar{
+     width: 10px;
+     background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+     border-radius: 5px;
+     background-color: gray;
+}
+
+body{
+     background-color: white;
+}
+
+body.dark{
+     background-color: black;
+}
+
+.container{
+     max-width: 1200px;
+     margin: 0 auto;
+     font-family: "Nunito Sans", sans-serif;
+}
+
+nav{
+     position: fixed;
+     width: 100%;
+     z-index: 1000;
+     top: 0;
+     border-bottom: 1px solid #eee;
+     background-color: white;
+}
+body.dark nav{
+     background-color: #2B3844;
+     border: none;
+}
+
+nav .container{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 17px 0px;
+}
+.logo h1{
+     font-weight: 800;
+     font-size: 25px;
+     color: black;
+}
+body.dark .logo h1{
+     color: white;
+}
+.mode {
+     width: 30px;
+     height: 29px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     font-size: 15px;
+     border: none;
+     background-color: gray;
+     border-radius: 3px;
+     color: white;
+     cursor: pointer;
+}
+
+.hero{
+     height: 100vh;
+     background-color: #FAFAFA;
+}
+body.dark .hero{
+     background-color: #202C36;
+     height: 100%;
+}
+
+.hero_top{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     padding: 20px 0px;
+     padding-bottom: 50px;
+     margin-top: 68px;
+}
+.search{
+     width: 300px;
+     height: 40px;
+     padding: 0px 13px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     border-radius: 10px;
+     background-color: white;
+     box-shadow: 0px 2px 9px 0px #0000000E;
+}
+body.dark .search{
+     background-color: #2B3844;
+}
+body.dark .search input{
+     color: white;
+}
+.search img{
+     width: 13px;
+}
+.search input{
+     width: 100%;
+     outline: none;
+     border: none;
+     background-color: transparent;
+}
+.filter select{
+     padding: 10px;
+     border: none;
+     background-color: white;
+     outline: none;
+     border-radius: 8px;
+     font-size: 13px;
+}
+body.dark .filter select{
+     color: white;
+     background-color: #2B3844;
+}
+.filter select>option{
+     padding: 10px;
+     outline: none;
+}
+
+.cards{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 20px;
+     padding-bottom: 100px;
+     flex-wrap: wrap;
+}
+.card{
+     width: 260px;
+     min-height: 320px;
+     background-color: white;
+     border-radius: 10px;
+     box-shadow: 0px 2px 9px 0px #0000000E;
+     cursor: pointer;
+     transition: all 0.3s ease-in-out;
+     margin-bottom: 20px;
+}
+.card.hidden{
+     display: none;
+}
+.card img{
+     height: 170px;
+}
+body.dark .card{
+     color: white;
+     background-color: #2B3844;
+}
+body.dark .card p{
+     color: rgb(241, 239, 239);
+}
+body.dark .card p>span{
+     color: rgb(180, 177, 177);
+}
+.card:hover{
+     transform: scale(1.05);
+     box-shadow: 0px 2px 5px 5px #ffffff0e;
+}
+.card_content{
+     padding: 20px;
+}
+.card_content h3{
+     padding-bottom: 10px;
+}
+.card_content p{
+     font-size: 13px;
+     color: #323131;
+}
+.card img{
+     width: 100%;
+}
+.loader{
+     position: fixed;
+     bottom: 0;
+     width: 1200px;
+     height: 600px;
+     background-color: black;
+     z-index: 9999;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     left: 163px;
+     display: none;
+}
+.loader.active{
+     display: flex;
+}
+
+@media screen and (max-width: 1255px) {
+     .container{
+          width: 98%;
+     }
+     .cards{
+          justify-content: center;
+     }
+     
+}
+
+@media screen and (max-width: 768px) {
+     .container{
+          width: 90%;
+     }
+     .cards{
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: center;
+     }
+     .hero_top{
+          justify-content: center;
+          gap: 30px;
+     }
+}
+@media screen and (max-width: 576px) {
+     .cards{
+          grid-template-columns: repeat(1, 1fr);          
+     }    
+     .card{
+          justify-content: center;
+     }
+     .logo{
+          font-size: 14px;
+     }
+}
